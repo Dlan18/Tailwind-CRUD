@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Class Ranks Tailwind</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+      * {
+        font-family: sans-serif;
+      }
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background-color: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background-color: #aaa;
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background-color: #0d6efd;
+      }
+      h1 {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        letter-spacing: 2.5px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="p-4 shadow-xl mb-10 bg-white z-3 sticky top-0">
+      <a class="flex justify-center items-center gap-1" href="">
+        <img src="logo.jpeg" width="37" height="auto" class="me-3" alt="" />
+        <h1 class="font-bold text-3xl m-0">SMKN 10 JKT</h1>
+      </a>
+    </nav>
+    <div class="flex flex-col sm:flex-row">
+      <div class="md:basis-2/5 lg:basis-1/4 m-5 p-7 bg-slate-100 rounded-lg shadow-xl max-h-[500px]">
+        <form action="index.php" method="post">
+          <h1 class="mb-3 text-center font-bold text-xl">XI RPL'56</h1>
+          <hr class="border border-slate-600" />
+          <h3 class="my-4 font-bold text-lg">Input Data</h3>
+          <div class="mb-3">
+            <label for="nama"><span class="text-blue-500 font-bold">-</span> Nama</label>
+            <input id="nama" type="text" name="nama" class="mt-1 py-1 px-2 border-2 border-blue-400 rounded-md w-full hover:shadow-lg" placeholder="Masukkan nama siswa/i" required />
+          </div>
+          <div class="mb-6">
+            <label for="nilai"><span class="text-blue-500 font-bold">-</span> Nilai</label>
+            <input id="nilai" type="number" name="nilai" class="mt-1 py-1 px-2 border-2 border-blue-400 rounded-md w-full hover:shadow-lg" placeholder="Masukkan nilai siswa/i" required />
+          </div>
+          <button class="px-4 py-2 bg-blue-600 text-white hover:bg-blue-700 rounded" style="letter-spacing: 0.5px" type="submit">KIRIM</button>
+        </form>
+      </div>
+
+      <div class="md:basis-3/5 lg:basis-3/4 m-5">
+        <div class="bg-slate-100 rounded-lg p-5 shadow-xl">
+          <h1 class="mb-5 text-center font-bold text-xl">Tabel Nilai Siswa</h1>
+          <table class="w-full text-center">
+            <thead class="bg-blue-600 text-white">
+              <tr>
+                <th class="p-3 border border-black">No.</th>
+                <th class="p-3 border border-black">Nama</th>
+                <th class="p-3 border border-black">Nilai</th>
+                <th class="p-3 border border-black">Opsi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="hover:bg-slate-200">
+                <td class="p-2 border border-black">1</td>
+                <td class="p-2 border border-black">Nama Lengkap</td>
+                <td class="p-2 border border-black">80</td>
+                <td class="p-2 border border-black">
+                  <button class="px-3 py-2 bg-emerald-500 text-white rounded hover:bg-emerald-600">Edit</button>
+                  <button class="px-3 py-2 bg-red-600 text-white rounded hover:bg-red-700">Hapus</button>
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-200">
+                <td class="p-2 border border-black">2</td>
+                <td class="p-2 border border-black">Nama Lengkap</td>
+                <td class="p-2 border border-black">80</td>
+                <td class="p-2 border border-black">
+                  <button class="px-3 py-2 bg-emerald-500 text-white rounded hover:bg-emerald-600">Edit</button>
+                  <button class="px-3 py-2 bg-red-600 text-white rounded hover:bg-red-700">Hapus</button>
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-200">
+                <td class="p-2 border border-black">3</td>
+                <td class="p-2 border border-black">Nama Lengkap</td>
+                <td class="p-2 border border-black">80</td>
+                <td class="p-2 border border-black">
+                  <button class="px-3 py-2 bg-emerald-500 text-white rounded hover:bg-emerald-600">Edit</button>
+                  <button class="px-3 py-2 bg-red-600 text-white rounded hover:bg-red-700">Hapus</button>
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-200">
+                <td class="p-2 border border-black">4</td>
+                <td class="p-2 border border-black">Nama Lengkap</td>
+                <td class="p-2 border border-black">80</td>
+                <td class="p-2 border border-black">
+                  <button class="px-3 py-2 bg-emerald-500 text-white rounded hover:bg-emerald-600">Edit</button>
+                  <button class="px-3 py-2 bg-red-600 text-white rounded hover:bg-red-700">Hapus</button>
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-200">
+                <td class="p-2 border border-black">5</td>
+                <td class="p-2 border border-black">Nama Lengkap</td>
+                <td class="p-2 border border-black">80</td>
+                <td class="p-2 border border-black">
+                  <button class="px-3 py-2 bg-emerald-500 text-white rounded hover:bg-emerald-600">Edit</button>
+                  <button class="px-3 py-2 bg-red-600 text-white rounded hover:bg-red-700">Hapus</button>
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-200">
+                <td class="p-2 border border-black">6</td>
+                <td class="p-2 border border-black">Nama Lengkap</td>
+                <td class="p-2 border border-black">80</td>
+                <td class="p-2 border border-black">
+                  <button class="px-3 py-2 bg-emerald-500 text-white rounded hover:bg-emerald-600">Edit</button>
+                  <button class="px-3 py-2 bg-red-600 text-white rounded hover:bg-red-700">Hapus</button>
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-200">
+                <td class="p-2 border border-black">7</td>
+                <td class="p-2 border border-black">Nama Lengkap</td>
+                <td class="p-2 border border-black">80</td>
+                <td class="p-2 border border-black">
+                  <button class="px-3 py-2 bg-emerald-500 text-white rounded hover:bg-emerald-600">Edit</button>
+                  <button class="px-3 py-2 bg-red-600 text-white rounded hover:bg-red-700">Hapus</button>
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-200">
+                <td class="p-2 border border-black">8</td>
+                <td class="p-2 border border-black">Nama Lengkap</td>
+                <td class="p-2 border border-black">80</td>
+                <td class="p-2 border border-black">
+                  <button class="px-3 py-2 bg-emerald-500 text-white rounded hover:bg-emerald-600">Edit</button>
+                  <button class="px-3 py-2 bg-red-600 text-white rounded hover:bg-red-700">Hapus</button>
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-200">
+                <td class="p-2 border border-black">9</td>
+                <td class="p-2 border border-black">Nama Lengkap</td>
+                <td class="p-2 border border-black">80</td>
+                <td class="p-2 border border-black">
+                  <button class="px-3 py-2 bg-emerald-500 text-white rounded hover:bg-emerald-600">Edit</button>
+                  <button class="px-3 py-2 bg-red-600 text-white rounded hover:bg-red-700">Hapus</button>
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-200">
+                <td class="p-2 border border-black">10</td>
+                <td class="p-2 border border-black">Nama Lengkap</td>
+                <td class="p-2 border border-black">80</td>
+                <td class="p-2 border border-black">
+                  <button class="px-3 py-2 bg-emerald-500 text-white rounded hover:bg-emerald-600">Edit</button>
+                  <button class="px-3 py-2 bg-red-600 text-white rounded hover:bg-red-700">Hapus</button>
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-200">
+                <td class="p-2 border border-black">11</td>
+                <td class="p-2 border border-black">Nama Lengkap</td>
+                <td class="p-2 border border-black">80</td>
+                <td class="p-2 border border-black">
+                  <button class="px-3 py-2 bg-emerald-500 text-white rounded hover:bg-emerald-600">Edit</button>
+                  <button class="px-3 py-2 bg-red-600 text-white rounded hover:bg-red-700">Hapus</button>
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-200">
+                <td class="p-2 border border-black">12</td>
+                <td class="p-2 border border-black">Nama Lengkap</td>
+                <td class="p-2 border border-black">80</td>
+                <td class="p-2 border border-black">
+                  <button class="px-3 py-2 bg-emerald-500 text-white rounded hover:bg-emerald-600">Edit</button>
+                  <button class="px-3 py-2 bg-red-600 text-white rounded hover:bg-red-700">Hapus</button>
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-200">
+                <td class="p-2 border border-black">13</td>
+                <td class="p-2 border border-black">Nama Lengkap</td>
+                <td class="p-2 border border-black">80</td>
+                <td class="p-2 border border-black">
+                  <button class="px-3 py-2 bg-emerald-500 text-white rounded hover:bg-emerald-600">Edit</button>
+                  <button class="px-3 py-2 bg-red-600 text-white rounded hover:bg-red-700">Hapus</button>
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-200">
+                <td class="p-2 border border-black">14</td>
+                <td class="p-2 border border-black">Nama Lengkap</td>
+                <td class="p-2 border border-black">80</td>
+                <td class="p-2 border border-black">
+                  <button class="px-3 py-2 bg-emerald-500 text-white rounded hover:bg-emerald-600">Edit</button>
+                  <button class="px-3 py-2 bg-red-600 text-white rounded hover:bg-red-700">Hapus</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="p-4 bg-blue-600 mt-3">
+      <h1 class="flex justify-center items-center text-white text-lg" style="letter-spacing: 0">Copyright © M.Fadlan Kamil</h1>
+    </div>
+  </body>
+</html>
