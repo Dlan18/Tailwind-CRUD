@@ -10,14 +10,14 @@ if(isset($_POST['submit'])) {
     'nis' => $_POST['nis']
   ]);
 
-  setcookie('message', $response, time() + 10);
+  setcookie('message', $response, time() + 5);
   header("Location: index.php");
 }
 
 if(isset($_POST['delete'])) {
   $response = Student::delete($_POST['id']);
 
-  setcookie('message', $response, time() + 10);
+  setcookie('message', $response, time() + 5);
   header("Location: index.php");
 }
 
@@ -27,7 +27,7 @@ if(isset($_POST['delete'])) {
     <?php include_once('./Layout/header.php'); ?>
 
     <?php if(isset($_COOKIE['message'])) : ?>
-    <div class="p-3 bg-sky-500 text-white m-3 rounded-lg text-center">
+    <div class="p-3 bg-green-600 text-white mt-1 mb-2 mx-10 rounded-lg text-center">
       <p><?= $_COOKIE['message'] ?></p>
     </div>
     <?php endif ?>
@@ -75,7 +75,25 @@ if(isset($_POST['delete'])) {
 
                    <form action="" method="POST" class="inline">
                     <input type="hidden" name="id" value="<?= $student['id'] ?>">
-                    <button title="Hapus" type="submit" name="delete"><a href=""  class="px-3 py-2 bg-red-600 text-white rounded hover:bg-red-700"><i class="bi bi-trash3"></i></a></button>
+                    <button title="Hapus" type="submit" onclick="toggleModal(); return false;"><a href=""  class="px-3 py-2 bg-red-600 text-white rounded hover:bg-red-700"><i class="bi bi-trash3"></i></a></button>
+                      </div>
+                      <div class="fixed z-10 overflow-y-auto top-0 w-full left-0 hidden" id="modal">
+                        <div class="flex items-center justify-center min-height-100vh pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+                          <div class="fixed inset-0 transition-opacity">
+                            <div class="absolute inset-0 bg-gray-900 opacity-75" />
+                          </div>
+                          <span class="hidden sm:inline-block sm:align-middle sm:h-screen">&#8203;</span>
+                          <div class="inline-block align-center bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
+                            <div class="p-7">
+                              <p>Anda yakin ingin menghapus<span class="font-bold"> <?= $student['name'] ?> </span> dengan Nis<span class="font-bold"> <?= $student['nis'] ?></span>?</p>
+                            </div>
+                            <div class="bg-gray-100 px-4 py-3 text-right">
+                              <button type="button" class="py-2 px-4 bg-gray-500 text-white rounded hover:bg-gray-600 mr-2" onclick="toggleModal()">Batal</button>
+                              <button type="submit" name="delete" class="py-2 px-4 bg-red-600 text-white rounded hover:bg-red-700 mr-2">Hapus</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                    </form>
                 </td>
               </tr>
@@ -85,8 +103,12 @@ if(isset($_POST['delete'])) {
         </div>
       </div>
     </div>
+
+    <?php include_once('./Layout/footer.php'); ?>
+
+    <script>
+      function toggleModal() { document.getElementById('modal').classList.toggle('hidden')
+      }
+    </script>
     
     <?php include_once('./Layout/bottom.php'); ?>
-
-  </body>
-</html>
