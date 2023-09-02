@@ -23,8 +23,8 @@ if(isset($_POST['delete'])) {
 
 ?>
 
-    <?php include_once('./Layout/top.php'); ?>
-    <?php include_once('./Layout/header.php'); ?>
+  <?php include_once('./Layout/top.php'); ?>
+  <?php include_once('./Layout/header.php'); ?>
 
     <?php if(isset($_COOKIE['message'])) : ?>
     <div class="p-3 bg-green-600 text-white mt-1 mb-2 mx-10 rounded-lg text-center">
@@ -104,11 +104,12 @@ if(isset($_POST['delete'])) {
       </div>
     </div>
 
-    <?php include_once('./Layout/footer.php'); ?>
+  <?php include_once('./Layout/footer.php'); ?>
 
-    <script>
-      function toggleModal() { document.getElementById('modal').classList.toggle('hidden')
-      }
-    </script>
+  <script>
+    function toggleModal() { 
+      document.getElementById('modal').classList.toggle('hidden')
+    }
+  </script>
     
-    <?php include_once('./Layout/bottom.php'); ?>
+  <?php include_once('./Layout/bottom.php'); ?>
