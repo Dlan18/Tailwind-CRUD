@@ -5,10 +5,13 @@ include_once('DB.php');
 class Student extends DB {
     public static function create($data)
     {
+        date_default_timezone_set('Asia/Jakarta');
+        
         $name = $data["name"];
         $nis = $data["nis"];
+        $timestamp = date('Y-m-d H:i:s');
 
-        $sql = "INSERT INTO students (name, nis) VALUES ('$name', '$nis')";
+        $sql = "INSERT INTO students (name, nis, created_at) VALUES ('$name', '$nis', '$timestamp')";
         $result = DB::connect()->query($sql);
 
         if($result) {
